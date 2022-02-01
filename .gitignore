@@ -41,6 +41,8 @@ gradle-app.setting
 
 sqlite.db
 
+webpack.config.d/key.config.js
+
 #############################
 
 # AWS User-specific
