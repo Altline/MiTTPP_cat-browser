@@ -65,8 +65,19 @@ object AppStyles : StyleSheet("AppStyles", isStatic = true) {
 
     }
 
+    val pageTitle by css {
+        margin(vertical = 30.px)
+        fontSize = 1.5.em
+        fontWeight = FontWeight.bold
+        color = Color.darkOliveGreen
+    }
+
     val active by css {
         backgroundColor = Color("#04AA6D")
     }
 
+    val loading by css {
+        margin(vertical = 30.px)
+        fontSize = 1.2.em
+    }
 }
