@@ -1,0 +1,72 @@
+package view.styles
+
+import kotlinx.css.*
+import kotlinx.css.properties.TextDecoration
+import styled.StyleSheet
+import styled.injectGlobal
+
+object AppStyles : StyleSheet("AppStyles", isStatic = true) {
+
+    init {
+        CssBuilder(allowClasses = false).apply {
+            body {
+                margin(0.px)
+                padding(0.px)
+            }
+
+            injectGlobal(toString())
+        }
+    }
+
+    val application by css {
+        display = Display.grid
+        gridTemplateAreas = GridTemplateAreas("'header' 'main' 'footer'")
+        fontFamily = "sans-serif"
+    }
+
+    val pageContent by css {
+        margin(top = 50.px)
+        display = Display.flex
+        flexDirection = FlexDirection.column
+        alignItems = Align.center
+    }
+
+    val navbar by css {
+        descendants("ul") {
+            margin(0.px)
+            padding(horizontal = 50.px)
+            position = Position.fixed
+            top = 0.px
+            width = 100.pct
+            listStyleType = ListStyleType.none
+            backgroundColor = Color("#333")
+            overflow = Overflow.hidden
+        }
+        descendants("li") {
+            display = Display.inline
+            float = Float.left
+
+            hover {
+                not(".AppStyles-active") {
+                    backgroundColor = Color("#111")
+                }
+            }
+        }
+        descendants("a") {
+            padding(14.px, 16.px)
+            display = Display.block
+            color = Color.white
+            textAlign = TextAlign.center
+            textDecoration = TextDecoration.none
+        }
+    }
+
+    val footer by css {
+
+    }
+
+    val active by css {
+        backgroundColor = Color("#04AA6D")
+    }
+
+}
