@@ -5,6 +5,7 @@ import kotlinx.coroutines.await
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import model.Breed
+import model.CatImage
 import org.w3c.fetch.RequestInit
 import kotlin.js.json
 
@@ -32,9 +33,21 @@ class CatService {
         return json.decodeFromString(response)
     }
 
-            JSON.parse<Array<Breed>>(json)
+    suspend fun getBreed(breedId: String): Breed {
+        val image = searchImages(breedId = breedId).first()
+        return image.breeds!!.find { it.id == breedId }!!
+    }
 
-        }.getOrDefault(emptyArray())
+    suspend fun searchImages(page: Int? = null, limit: Int? = null, breedId: String? = null, categoryId: String? = null): Array<CatImage> {
+        val params = mutableListOf<Pair<String, String>>()
+
+        if (page != null) params.add("page" to page.toString())
+        if (limit != null) params.add("limit" to limit.toString())
+        if (breedId != null) params.add("breed_id" to breedId)
+        if (categoryId != null) params.add("category_id" to categoryId)
+
+        val response = getAuthorized("images/search", params.toTypedArray())
+        return json.decodeFromString(response)
     }
 
     private suspend fun getAuthorized(location: String, params: Array<Pair<String, String>>): String {
