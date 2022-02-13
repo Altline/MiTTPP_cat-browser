@@ -30,6 +30,13 @@ val ContentWrapper = fc<ContentWrapperProps> { props ->
                 }
             }
             Route {
+                attrs.path = "/breeds/:breedId"
+                attrs.element = BreedDetailsPage.create {
+                    coroutineScope = props.coroutineScope
+                    catService = props.catService
+                }
+            }
+            Route {
                 attrs.path = "/categories"
                 attrs.element = CategoriesPage.create {
                     coroutineScope = props.coroutineScope

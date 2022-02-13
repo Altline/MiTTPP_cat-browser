@@ -1,11 +1,12 @@
 package view.styles
 
 import kotlinx.css.*
+import kotlinx.css.properties.TextDecoration
 import kotlinx.css.properties.scale
 import kotlinx.css.properties.transform
 import styled.StyleSheet
 
-object BreedsStyles : StyleSheet("BreedsStyles", isStatic = true) {
+object BreedStyles : StyleSheet("BreedStyles", isStatic = true) {
 
     val breedTileHolder by css {
         padding(20.px, 40.px)
@@ -13,6 +14,10 @@ object BreedsStyles : StyleSheet("BreedsStyles", isStatic = true) {
         gridTemplateColumns = GridTemplateColumns(GridAutoRows.auto, GridAutoRows.auto, GridAutoRows.auto)
         backgroundColor = Color.lightGray
         borderRadius = 8.px
+
+        descendants("a") {
+            textDecoration = TextDecoration.none
+        }
     }
 
     val breedTile by css {
@@ -21,6 +26,7 @@ object BreedsStyles : StyleSheet("BreedsStyles", isStatic = true) {
         backgroundColor = Color.white
         display = Display.grid
         gridTemplateRows = GridTemplateRows(GridAutoRows.auto, GridAutoRows.auto)
+        color = Color.initial
 
         hover {
             backgroundColor = Color("#ffe")

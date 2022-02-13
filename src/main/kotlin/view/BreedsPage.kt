@@ -13,7 +13,7 @@ import react.useState
 import styled.css
 import styled.styledDiv
 import view.styles.AppStyles
-import view.styles.BreedsStyles
+import view.styles.BreedStyles
 
 external interface BreedsPageProps : ApplicationProps
 
@@ -59,7 +59,7 @@ val BreedsPage = fc<BreedsPageProps> { props ->
         +"Breeds"
     }
     styledDiv {
-        css { +BreedsStyles.breedTileHolder }
+        css { +BreedStyles.breedTileHolder }
 
         for (breed in breeds) {
             BreedTile {
