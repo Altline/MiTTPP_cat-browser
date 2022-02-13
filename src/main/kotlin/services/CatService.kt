@@ -2,6 +2,8 @@ package services
 
 import kotlinx.browser.window
 import kotlinx.coroutines.await
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.json.Json
 import model.Breed
 import org.w3c.fetch.RequestInit
 import kotlin.js.json
@@ -16,14 +18,19 @@ class CatService {
         }.getOrNull()
     }
 
+    private val json = Json {
+        ignoreUnknownKeys = true
+    }
+
     suspend fun getBreeds(page: Int, limit: Int = 18): Array<Breed> {
-        return runCatching {
-            val json = getAuthorized(
-                "breeds", arrayOf(
-                    "limit" to limit.toString(),
-                    "page" to page.toString()
-                )
+        val response = getAuthorized(
+            "breeds", arrayOf(
+                "limit" to limit.toString(),
+                "page" to page.toString()
             )
+        )
+        return json.decodeFromString(response)
+    }
 
             JSON.parse<Array<Breed>>(json)
 
