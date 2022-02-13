@@ -17,7 +17,6 @@ object BreedsStyles : StyleSheet("BreedsStyles", isStatic = true) {
 
     val breedTile by css {
         margin(5.px)
-        padding(5.px)
         borderRadius = 3.px
         backgroundColor = Color.white
         display = Display.grid
@@ -30,10 +29,12 @@ object BreedsStyles : StyleSheet("BreedsStyles", isStatic = true) {
             }
         }
 
-        descendants("img") {
+        child("img") {
+            borderTopLeftRadius = 3.px
+            borderTopRightRadius = 3.px
             alignSelf = Align.center
         }
-        descendants("div") {
+        child("div") {
             margin(vertical = 10.px)
             alignSelf = Align.selfEnd
             textAlign = TextAlign.center
