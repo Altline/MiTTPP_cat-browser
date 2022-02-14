@@ -8,7 +8,6 @@ import lodash
 import model.Breed
 import react.fc
 import react.useEffect
-import react.useEffectOnce
 import react.useState
 import styled.css
 import styled.styledDiv
@@ -23,16 +22,14 @@ val BreedsPage = fc<BreedsPageProps> { props ->
     var loading: Boolean by useState(false)
     var reachedPageEnd: Boolean by useState(false)
 
-    useEffectOnce {
-        val job = props.coroutineScope.launch {
-            breeds = props.catService.getBreeds(0)
-        }
-        cleanup {
-            job.cancel()
-        }
-    }
-
     useEffect {
+        if (breeds.isEmpty()) {
+            props.coroutineScope.launch {
+                breeds = props.catService.getBreeds(0)
+            }
+            currentPage = 0
+        }
+
         window.onscroll = lodash.debounce({
             if (!reachedPageEnd && !loading && document.isNearScrollEnd()) {
                 props.coroutineScope.launch {
