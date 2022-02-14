@@ -47,4 +47,24 @@ object BreedStyles : StyleSheet("BreedStyles", isStatic = true) {
             fontSize = 1.2.em
         }
     }
+
+    val breedHead by css {
+        margin(bottom = 30.px)
+        padding(15.px)
+        display = Display.flex
+        flexDirection = FlexDirection.column
+        alignItems = Align.center
+        borderRadius = 5.px
+
+        child("img") {
+            +AppStyles.headImage
+        }
+        child("h1") {
+            +AppStyles.pageTitle
+        }
+        child("h2") {
+            +AppStyles.pageSubtitle
+            margin(top = -10.px)
+        }
+    }
 }

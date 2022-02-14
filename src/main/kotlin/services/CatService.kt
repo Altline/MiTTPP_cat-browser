@@ -38,7 +38,17 @@ class CatService {
         return image.breeds!!.find { it.id == breedId }!!
     }
 
-    suspend fun searchImages(page: Int? = null, limit: Int? = null, breedId: String? = null, categoryId: String? = null): Array<CatImage> {
+    suspend fun getImage(imageId: String): CatImage {
+        val response = getAuthorized("images/$imageId", emptyArray())
+        return json.decodeFromString(response)
+    }
+
+    suspend fun searchImages(
+        page: Int? = null,
+        limit: Int? = null,
+        breedId: String? = null,
+        categoryId: String? = null
+    ): Array<CatImage> {
         val params = mutableListOf<Pair<String, String>>()
 
         if (page != null) params.add("page" to page.toString())

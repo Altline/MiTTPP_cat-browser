@@ -75,6 +75,18 @@ object AppStyles : StyleSheet("AppStyles", isStatic = true) {
         color = Color.darkOliveGreen
     }
 
+    val pageSubtitle by css {
+        margin(vertical = 10.px)
+        fontSize = 1.2.em
+        fontWeight = FontWeight.initial
+        color = Color("#555")
+    }
+
+    val headImage by css {
+        borderRadius = 50.pct
+        width = 350.px
+    }
+
     val active by css {
         backgroundColor = Color("#04AA6D")
     }
