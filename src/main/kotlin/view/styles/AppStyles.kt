@@ -21,6 +21,7 @@ object AppStyles : StyleSheet("AppStyles", isStatic = true) {
     val application by css {
         display = Display.grid
         gridTemplateAreas = GridTemplateAreas("'header' 'main' 'footer'")
+        justifyItems = JustifyItems.center
         fontFamily = "sans-serif"
     }
 
@@ -29,6 +30,7 @@ object AppStyles : StyleSheet("AppStyles", isStatic = true) {
         display = Display.flex
         flexDirection = FlexDirection.column
         alignItems = Align.center
+        width = 80.pct
     }
 
     val navbar by css {
@@ -37,6 +39,7 @@ object AppStyles : StyleSheet("AppStyles", isStatic = true) {
             padding(horizontal = 50.px)
             position = Position.fixed
             top = 0.px
+            left = 0.px
             width = 100.pct
             listStyleType = ListStyleType.none
             backgroundColor = Color("#333")
