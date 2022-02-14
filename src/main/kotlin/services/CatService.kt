@@ -53,9 +53,11 @@ class CatService {
     private suspend fun getAuthorized(location: String, params: Array<Pair<String, String>>): String {
         check(apiKey != null) { "No API key." }
 
-        val urlParams = params.fold("?") { acc, param ->
-            acc + param.first + "=" + param.second + "&"
-        }.dropLast(1)
+        val urlParams = if (params.isNotEmpty()) {
+            params.fold("?") { acc, param ->
+                acc + param.first + "=" + param.second + "&"
+            }.dropLast(1)
+        } else ""
 
         return window.fetch(
             baseAddress + location + urlParams, RequestInit(
