@@ -1,20 +1,15 @@
 package view
 
 import kotlinx.coroutines.launch
-import kotlinx.css.*
 import model.Breed
 import model.CatImage
-import react.dom.h1
-import react.dom.h2
-import react.dom.img
-import react.dom.p
+import react.dom.*
 import react.fc
 import react.router.useParams
 import react.useEffectOnce
 import react.useState
 import styled.css
 import styled.styledDiv
-import styled.styledImg
 import view.styles.AppStyles
 import view.styles.BreedStyles
 
@@ -49,6 +44,16 @@ val BreedDetailsPage = fc<BreedDetailsPageProps> { props ->
                 +"Alternate names: ${breed.altNames}"
             }
         }
+    }
+
+    div {
+        conditionalDescriptor("Indoor", breed.isIndoor)
+        conditionalDescriptor("Natural", breed.isNatural)
+        conditionalDescriptor("Rare", breed.isRare)
+        conditionalDescriptor("Hairless", breed.isHairless)
+        conditionalDescriptor("Hypoallergenic", breed.isHypoallergenic)
+        conditionalDescriptor("Short Legs", breed.hasShortLegs)
+        conditionalDescriptor("Suppressed Tail", breed.hasSuppressedTail)
     }
 
     styledDiv {
