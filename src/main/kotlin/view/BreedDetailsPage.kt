@@ -15,6 +15,7 @@ import react.useState
 import styled.css
 import styled.styledDiv
 import styled.styledImg
+import view.styles.AppStyles
 import view.styles.BreedStyles
 
 external interface BreedDetailsPageProps : ApplicationProps
@@ -56,16 +57,10 @@ val BreedDetailsPage = fc<BreedDetailsPageProps> { props ->
         p { +"Lifespan: ${breed.lifespan} years" }
     }
     styledDiv {
-        css {
-            display = Display.flex
-            justifyContent = JustifyContent.center
-            flexWrap = FlexWrap.wrap
-        }
+        css { +AppStyles.mosaic }
+
         for (image in images) {
-            styledImg {
-                css {
-                    margin(10.px)
-                }
+            img {
                 attrs.height = "256px"
                 attrs.src = image.url
             }

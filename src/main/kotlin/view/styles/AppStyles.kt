@@ -87,6 +87,16 @@ object AppStyles : StyleSheet("AppStyles", isStatic = true) {
         width = 350.px
     }
 
+    val mosaic by css {
+        display = Display.flex
+        justifyContent = JustifyContent.center
+        flexWrap = FlexWrap.wrap
+
+        child("img") {
+            margin(10.px)
+        }
+    }
+
     val active by css {
         backgroundColor = Color("#04AA6D")
     }
