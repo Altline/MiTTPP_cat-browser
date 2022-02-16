@@ -30,6 +30,11 @@ val BreedDetailsPage = fc<BreedDetailsPageProps> { props ->
         }
     }
 
+    if (breed.id == "") {
+        loadingSign()
+        return@fc
+    }
+
     styledDiv {
         css { +BreedStyles.breedHead }
 

@@ -51,6 +51,11 @@ val BreedsPage = fc<BreedsPageProps> { props ->
         }
     }
 
+    if (breeds.isEmpty()) {
+        loadingSign()
+        return@fc
+    }
+
     styledDiv {
         css { +AppStyles.pageTitle }
         +"Breeds"
@@ -65,10 +70,5 @@ val BreedsPage = fc<BreedsPageProps> { props ->
         }
     }
 
-    if (loading) {
-        styledDiv {
-            css { +AppStyles.loading }
-            +"Loading..."
-        }
-    }
+    loadingSign(loading)
 }
