@@ -19,14 +19,15 @@ object AppStyles : StyleSheet("AppStyles", isStatic = true) {
     }
 
     val application by css {
+        height = 100.vh
         display = Display.grid
-        gridTemplateAreas = GridTemplateAreas("'header' 'main' 'footer'")
+        gridTemplateRows = GridTemplateRows("auto 1fr auto")
+        overflowX = Overflow.hidden
         justifyItems = JustifyItems.center
         fontFamily = "sans-serif"
     }
 
     val pageContent by css {
-        margin(top = 50.px)
         display = Display.flex
         flexDirection = FlexDirection.column
         alignItems = Align.center
@@ -34,13 +35,11 @@ object AppStyles : StyleSheet("AppStyles", isStatic = true) {
     }
 
     val navbar by css {
+        width = 100.pct
+
         descendants("ul") {
             margin(0.px)
             padding(horizontal = 50.px)
-            position = Position.fixed
-            top = 0.px
-            left = 0.px
-            width = 100.pct
             listStyleType = ListStyleType.none
             backgroundColor = Color("#333")
             overflow = Overflow.hidden
@@ -65,7 +64,14 @@ object AppStyles : StyleSheet("AppStyles", isStatic = true) {
     }
 
     val footer by css {
+        padding(16.px)
+        width = 100.pct
+        backgroundColor = Color("#333")
+        color = Color.white
 
+        child("div") {
+            padding(horizontal = 32.px)
+        }
     }
 
     val pageTitle by css {
