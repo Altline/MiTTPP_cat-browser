@@ -52,6 +52,8 @@ val BreedDetailsPage = fc<BreedDetailsPageProps> { props ->
     }
 
     styledDiv {
+        css { +BreedStyles.descriptionPanel }
+
         p { +breed.temperament }
         p { +breed.description }
         p { +"Origin: ${breed.origin}" }

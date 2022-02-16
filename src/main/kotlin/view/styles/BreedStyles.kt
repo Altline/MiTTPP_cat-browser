@@ -68,6 +68,11 @@ object BreedStyles : StyleSheet("BreedStyles", isStatic = true) {
         }
     }
 
+    val descriptionPanel by css {
+        fontSize = 1.06.em
+        letterSpacing = 0.0125.em
+    }
+
     val traitPanel by css {
         display = Display.grid
         gridTemplateColumns = GridTemplateColumns("auto auto auto")
