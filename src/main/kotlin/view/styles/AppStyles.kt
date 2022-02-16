@@ -67,7 +67,9 @@ object AppStyles : StyleSheet("AppStyles", isStatic = true) {
         padding(16.px)
         width = 100.pct
         backgroundColor = Color("#333")
-        color = Color.white
+        color = Color.lightGray
+        fontSize = 0.75.em
+        textAlign = TextAlign.end
 
         child("div") {
             padding(horizontal = 32.px)
