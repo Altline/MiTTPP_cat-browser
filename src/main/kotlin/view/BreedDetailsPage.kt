@@ -50,12 +50,31 @@ val BreedDetailsPage = fc<BreedDetailsPageProps> { props ->
             }
         }
     }
+
     styledDiv {
         p { +breed.temperament }
         p { +breed.description }
         p { +"Origin: ${breed.origin}" }
         p { +"Lifespan: ${breed.lifespan} years" }
     }
+
+    styledDiv {
+        css { +BreedStyles.traitPanel }
+
+        gradeScale("Energy Level", breed.energyLevel)
+        gradeScale("Affection Level", breed.affectionLevel)
+        gradeScale("Child Friendly", breed.childFriendly)
+        gradeScale("Dog Friendly", breed.dogFriendly)
+        gradeScale("Stranger Friendly", breed.strangerFriendly)
+        gradeScale("Intelligence", breed.intelligence)
+        gradeScale("Adaptability", breed.adaptability)
+        gradeScale("Grooming", breed.grooming)
+        gradeScale("Shedding Level", breed.sheddingLevel)
+        gradeScale("Health Issues", breed.healthIssues)
+        gradeScale("Social Needs", breed.socialNeeds)
+        gradeScale("Vocalization", breed.vocalization)
+    }
+
     styledDiv {
         css { +AppStyles.mosaic }
 

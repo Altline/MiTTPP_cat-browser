@@ -67,4 +67,10 @@ object BreedStyles : StyleSheet("BreedStyles", isStatic = true) {
             margin(top = -10.px)
         }
     }
+
+    val traitPanel by css {
+        display = Display.grid
+        gridTemplateColumns = GridTemplateColumns("auto auto auto")
+        columnGap = 24.px
+    }
 }
