@@ -26,7 +26,7 @@ val BreedTile = fc<BreedTileProps> { props ->
                 +BreedStyles.breedTile
             }
 
-            img(props.breed.name, props.breed.image?.url) {
+            img("Image is missing", props.breed.image?.url) {
                 attrs.width = "256px"
             }
             div {
