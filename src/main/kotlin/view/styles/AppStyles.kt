@@ -12,6 +12,7 @@ object AppStyles : StyleSheet("AppStyles", isStatic = true) {
             body {
                 margin(0.px)
                 padding(0.px)
+                overflowX = Overflow.hidden
             }
 
             injectGlobal(toString())
@@ -22,7 +23,6 @@ object AppStyles : StyleSheet("AppStyles", isStatic = true) {
         height = 100.vh
         display = Display.grid
         gridTemplateRows = GridTemplateRows("auto 1fr auto")
-        overflowX = Overflow.hidden
         justifyItems = JustifyItems.center
         fontFamily = "sans-serif"
     }
@@ -36,13 +36,12 @@ object AppStyles : StyleSheet("AppStyles", isStatic = true) {
 
     val navbar by css {
         width = 100.pct
+        backgroundColor = Color("#333")
 
         descendants("ul") {
             margin(0.px)
             padding(horizontal = 50.px)
             listStyleType = ListStyleType.none
-            backgroundColor = Color("#333")
-            overflow = Overflow.hidden
         }
         descendants("li") {
             display = Display.inline
