@@ -14,7 +14,7 @@ object ComponentStyles : StyleSheet("ComponentStyles", isStatic = true) {
     }
 
     val gradeScale by css {
-        margin(vertical = 4.px)
+        margin(vertical = 8.px)
 
         descendants("img") {
             margin(top = 5.px, right = 5.px)

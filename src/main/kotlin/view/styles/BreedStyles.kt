@@ -49,7 +49,7 @@ object BreedStyles : StyleSheet("BreedStyles", isStatic = true) {
     }
 
     val breedHead by css {
-        margin(bottom = 30.px)
+        margin(bottom = 15.px)
         padding(15.px)
         display = Display.flex
         flexDirection = FlexDirection.column
@@ -64,7 +64,7 @@ object BreedStyles : StyleSheet("BreedStyles", isStatic = true) {
         }
         child("h2") {
             +AppStyles.pageSubtitle
-            margin(top = -10.px)
+            margin(vertical = -10.px)
         }
     }
 
@@ -74,8 +74,9 @@ object BreedStyles : StyleSheet("BreedStyles", isStatic = true) {
     }
 
     val traitPanel by css {
+        margin(bottom = 20.px)
         display = Display.grid
         gridTemplateColumns = GridTemplateColumns("auto auto auto")
-        columnGap = 24.px
+        columnGap = 32.px
     }
 }
