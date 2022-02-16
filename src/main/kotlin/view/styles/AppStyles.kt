@@ -2,6 +2,7 @@ package view.styles
 
 import kotlinx.css.*
 import kotlinx.css.properties.TextDecoration
+import kotlinx.css.properties.border
 import styled.StyleSheet
 import styled.injectGlobal
 
@@ -88,8 +89,8 @@ object AppStyles : StyleSheet("AppStyles", isStatic = true) {
     }
 
     val headImage by css {
-        borderRadius = 50.pct
         width = 350.px
+        border(3.px, BorderStyle.solid, Color.lightGray, 50.pct)
     }
 
     val mosaic by css {
