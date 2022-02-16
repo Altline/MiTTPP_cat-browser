@@ -1,6 +1,7 @@
-package view
+package view.home
 
 import react.fc
+import view.ApplicationProps
 
 external interface HomePageProps : ApplicationProps
 

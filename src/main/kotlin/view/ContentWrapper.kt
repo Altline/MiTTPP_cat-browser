@@ -6,6 +6,10 @@ import react.router.Route
 import react.router.Routes
 import styled.css
 import styled.styledMain
+import view.breeds.BreedDetailsPage
+import view.breeds.BreedsPage
+import view.categories.CategoriesPage
+import view.home.HomePage
 import view.styles.AppStyles
 
 external interface ContentWrapperProps : ApplicationProps

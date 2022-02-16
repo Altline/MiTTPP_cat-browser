@@ -1,4 +1,4 @@
-package view
+package view.breeds
 
 import isNearScrollEnd
 import kotlinx.browser.document
@@ -11,6 +11,8 @@ import react.useEffect
 import react.useState
 import styled.css
 import styled.styledDiv
+import view.ApplicationProps
+import view.loadingSign
 import view.styles.AppStyles
 import view.styles.BreedStyles
 

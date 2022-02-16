@@ -1,6 +1,7 @@
-package view
+package view.categories
 
 import react.fc
+import view.ApplicationProps
 
 external interface CategoriesPageProps : ApplicationProps
 

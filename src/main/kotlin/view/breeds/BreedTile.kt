@@ -1,4 +1,4 @@
-package view
+package view.breeds
 
 import model.Breed
 import react.Props

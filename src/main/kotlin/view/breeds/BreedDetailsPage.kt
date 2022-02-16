@@ -1,4 +1,4 @@
-package view
+package view.breeds
 
 import kotlinx.coroutines.launch
 import model.Breed
@@ -10,6 +10,10 @@ import react.useEffectOnce
 import react.useState
 import styled.css
 import styled.styledDiv
+import view.ApplicationProps
+import view.conditionalDescriptor
+import view.gradeScale
+import view.loadingSign
 import view.styles.AppStyles
 import view.styles.BreedStyles
 
